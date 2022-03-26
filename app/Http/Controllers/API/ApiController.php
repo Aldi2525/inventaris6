@@ -37,4 +37,17 @@ class ApiController extends Controller
         ], 200);
     }
 
+    public function barangmasuk()
+    {
+        $masuk = DB::table('barangmasuks')
+            ->join('barangs', 'barangmasuks.id_barang', '=', 'barang.id')
+            ->select('barangmasuks.tgl_msk', 'barangmasuks.jumlah_msk', 'barangs.nama_barang as nama barang', 'barangmasuks.jumlah_msk')
+            ->get();
+        return response()->json([
+            'success' => true,
+            'message' => 'data Barang Masuk',
+            'data' => $masuk,
+        ], 200);
+
+    }
 }
