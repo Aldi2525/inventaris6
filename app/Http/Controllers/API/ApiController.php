@@ -41,7 +41,7 @@ class ApiController extends Controller
     {
         $masuk = DB::table('barangmasuks')
             ->join('barangs', 'barangmasuks.id_barang', '=', 'barangs.id')
-            ->select('barangmasuks.tgl_msk', 'barangmasuks.jumlah_msk', 'barangs.nama_barang as nama_barang', 'barangs.jumlah_msk')
+            ->select('barangmasuks.tgl_msk', 'barangmasuks.jumlah_msk', 'barangs.nama_barang as nama_barang', 'barangmasuks.jumlah_msk as jumlah_msk')
             ->get();
         return response()->json([
             'success' => true,
