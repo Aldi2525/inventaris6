@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('supplier', [ApiController::class, 'supplier']);
 Route::get('barang', [ApiController::class, 'barang']);
-Route::get('bmasuk', [ApiController::class, 'bmasuk']);
+Route::get('bmasuk', [ApiController::class, 'barangmasuk']);
